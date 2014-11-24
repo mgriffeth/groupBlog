@@ -1,4 +1,59 @@
 (function(){
+  App.Models.PostModel = Parse.Object.extend({
+
+  className: 'Post',
+
+  idAttribute:'objectId',
+
+    defaults:{
+      title:'',
+      content:'',
+      authorName:'',
+      category:[],
+      published:false
+
+    },
+
+
+   initialize: function () {
+
+    }
+  });
+}());
+
+(function(){
+  App.Models.CommentModel = Parse.Object.extend({
+
+  className: 'Comment',
+
+  idAttribute:'objectId',
+
+    defaults: {
+      content:''
+    },
+
+
+   initialize: function () {
+
+    }
+  });
+}());
+
+(function (){
+
+  App.Collections.PostCollection = Parse.Collection.extend({
+    model: App.Models.PostModel
+  });
+}());
+
+(function (){
+
+  App.Collections.CommentCollection = Parse.Collection.extend({
+    model: App.Models.CommentModel
+  });
+}());
+
+(function(){
   App.Views.Login = Parse.View.extend({
 
     events:{
@@ -759,61 +814,6 @@ App.Views.CategoryView = Parse.View.extend({
     }
 
 
-  });
-}());
-
-(function(){
-  App.Models.PostModel = Parse.Object.extend({
-
-  className: 'Post',
-
-  idAttribute:'objectId',
-
-    defaults:{
-      title:'',
-      content:'',
-      authorName:'',
-      category:[],
-      published:false
-
-    },
-
-
-   initialize: function () {
-
-    }
-  });
-}());
-
-(function(){
-  App.Models.CommentModel = Parse.Object.extend({
-
-  className: 'Comment',
-
-  idAttribute:'objectId',
-
-    defaults: {
-      content:''
-    },
-
-
-   initialize: function () {
-
-    }
-  });
-}());
-
-(function (){
-
-  App.Collections.PostCollection = Parse.Collection.extend({
-    model: App.Models.PostModel
-  });
-}());
-
-(function (){
-
-  App.Collections.CommentCollection = Parse.Collection.extend({
-    model: App.Models.CommentModel
   });
 }());
 
