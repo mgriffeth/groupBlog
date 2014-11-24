@@ -285,7 +285,7 @@ App.Views.HomeView = Parse.View.extend({
     },
 
     template: _.template($('#readPostTemp').html()),
-    commentTemplate: _.template($('#commentTemp').html()),
+    // commentTemplate: _.template($('#commentTemp').html()),
 
     initialize: function (options) {
       this.options = options;
